@@ -1,5 +1,4 @@
-﻿using agent.Class;
-using agent.Repository;
+﻿using agent.Repository;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
 using System;
@@ -19,9 +18,9 @@ namespace agent.Controllers
         }
 
         [HttpGet("from/{fromTime}/to/{toTime}")]
-        public List<MetricReaponse> GetMetricsFromAgent([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        public List<MetricResponse> GetMetricsFromAgent([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
         {
-            List<MetricReaponse> query = repository.GetByTimePeriod(fromTime, toTime);
+            List<MetricResponse> query = repository.GetByTimePeriod(fromTime, toTime);
             logger.Trace($"GetAgentMetrics fromTime = {fromTime} toTime = {toTime}");
             return query;
         }

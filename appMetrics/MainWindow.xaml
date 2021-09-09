@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:appMetrics.Graff"
-        xmlns:LiveCharts="clr-namespace:LiveCharts;assembly=LiveCharts" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" xmlns:local1="clr-namespace:appMetrics.Graff" xmlns:manager="clr-namespace:manager" x:Class="appMetrics.MainWindow"
+        xmlns:LiveCharts="clr-namespace:LiveCharts;assembly=LiveCharts" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" xmlns:local1="clr-namespace:appMetrics.Graff" x:Class="appMetrics.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="758.536" Width="1331.2">
     <Grid Margin="182,0,-0.2,0.8" RenderTransformOrigin="0.228,0.566" Height="676" VerticalAlignment="Bottom">
@@ -12,15 +12,15 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <local1:CpuGraff x:Name="CpuGraff" Margin="0" HorizontalAlignment="Left" Height="346" Width="550" VerticalAlignment="Top"/>
-        <local1:RamGraff x:Name="RamGraff" Margin="0,0,0.2,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <local1:NetworkGraff x:Name="NetworkGraff" VerticalAlignment="Bottom" Height="350" Width="550" HorizontalAlignment="Left" Margin="0"/>
-        <local1:HddGraff x:Name="HddGraff" VerticalAlignment="Bottom" Height="350" Width="550" HorizontalAlignment="Right" Margin="0,0,0.2,0"/>
+        <local1:CpuGraff x:Name="cpuGraff" Margin="0" HorizontalAlignment="Left" Height="346" Width="550" VerticalAlignment="Top"/>
+        <local1:RamGraff x:Name="ramGraff" Margin="0,0,0.2,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <local1:NetworkGraff x:Name="networkGraff" VerticalAlignment="Bottom" Height="350" Width="550" HorizontalAlignment="Left" Margin="0"/>
+        <local1:HddGraff x:Name="hddGraff" VerticalAlignment="Bottom" Height="350" Width="550" HorizontalAlignment="Right" Margin="0,0,0.2,0"/>
 
         <ListBox Name="listBox" HorizontalAlignment="Left" Height="583" Margin="-162,0,0,0" VerticalAlignment="Top" Width="126" SelectedIndex="0" SelectionChanged="Select"/>
         <Button x:Name="registredAgent" Content="Зарегистрировать" HorizontalAlignment="Left" Margin="-162,583,0,0" VerticalAlignment="Top" Width="126" Click="UpdateOnСlickRegister"/>
         <Grid HorizontalAlignment="Left" Height="100" Margin="327,169,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="deleteAgent" Content="Удалить" HorizontalAlignment="Left" Margin="-162,616,0,0" VerticalAlignment="Top" Width="126" Click="UpdateOnСlickDelete"/>
-        <TextBlock Name="CurrentAgent" HorizontalAlignment="Center" Margin="122,-35,120.2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="901" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="currentAgent" HorizontalAlignment="Center" Margin="122,-35,120.2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="901" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Window>

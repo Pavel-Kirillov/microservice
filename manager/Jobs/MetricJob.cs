@@ -1,6 +1,4 @@
-﻿using agent.Class;
-using agent.Repository;
-using manager;
+﻿using manager.Repository;
 using Newtonsoft.Json;
 using NLog;
 using Quartz;
@@ -9,7 +7,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace agent.Jobs
+namespace manager.Jobs
 {
     public abstract class MetricJob : IJob
     {
@@ -43,7 +41,7 @@ namespace agent.Jobs
                 if (response.IsSuccessStatusCode)
                 {
                     string responseString = response.Content.ReadAsStringAsync().Result;
-                    List<MetricReaponse> metricsResponse = JsonConvert.DeserializeObject<List<MetricReaponse>>(responseString);
+                    List<MetricResponse> metricsResponse = JsonConvert.DeserializeObject<List<MetricResponse>>(responseString);
                     for (int j = 0; j < metricsResponse.Count; j++)
                     {
                         repositoryMetrics.Add(agents[i].AgentId, metricsResponse[j].Value, metricsResponse[j].Time);

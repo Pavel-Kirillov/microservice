@@ -1,17 +1,14 @@
-using agent.Jobs;
-using agent.Repository;
 using FluentMigrator.Runner;
+using manager.Jobs;
+using manager.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using Polly;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
-using System;
 
 namespace manager
 {
@@ -21,7 +18,7 @@ namespace manager
         {
             Configuration = configuration;
         }
-        private const string ConnectionString = @"Data Source=metricsManager.db; Version=3;";
+        private const string connectionString = @"Data Source=metricsManager.db; Version=3;";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -34,7 +31,7 @@ namespace manager
             services.AddFluentMigratorCore()
                 .ConfigureRunner(rb => rb
                 .AddSQLite()
-                .WithGlobalConnectionString(ConnectionString)
+                .WithGlobalConnectionString(connectionString)
                 .ScanIn(typeof(Startup).Assembly).For.Migrations()
                 ).AddLogging(lb => lb
                 .AddFluentMigratorConsole());

@@ -68,23 +68,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Class\Register.xaml">
+    <Page Include="InterfaceElements\Register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Graff\HddGraff.xaml">
+    <Page Include="InterfaceElements\HddGraff.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Graff\NetworkGraff.xaml">
+    <Page Include="InterfaceElements\NetworkGraff.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Graff\RamGraff.xaml">
+    <Page Include="InterfaceElements\RamGraff.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Graff\CpuGraff.xaml">
+    <Page Include="InterfaceElements\CpuGraff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,25 +96,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Class\AgentInfo.cs" />
-    <Compile Include="Class\Register.xaml.cs">
+    <Compile Include="DifferentClasses\AgentInfo.cs" />
+    <Compile Include="InterfaceElements\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Graff\HddGraff.xaml.cs">
+    <Compile Include="InterfaceElements\HddGraff.xaml.cs">
       <DependentUpon>HddGraff.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Graff\NetworkGraff.xaml.cs">
+    <Compile Include="InterfaceElements\NetworkGraff.xaml.cs">
       <DependentUpon>NetworkGraff.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Graff\RamGraff.xaml.cs">
+    <Compile Include="InterfaceElements\RamGraff.xaml.cs">
       <DependentUpon>RamGraff.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Graff\CpuGraff.xaml.cs">
+    <Compile Include="InterfaceElements\CpuGraff.xaml.cs">
       <DependentUpon>CpuGraff.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Class\Event.cs" />
-    <Compile Include="Class\MetricResponse.cs" />
-    <Compile Include="Class\Metrics.cs" />
+    <Compile Include="DifferentClasses\Event.cs" />
+    <Compile Include="DifferentClasses\MetricResponse.cs" />
+    <Compile Include="DifferentClasses\Metrics.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

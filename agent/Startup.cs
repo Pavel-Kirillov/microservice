@@ -1,4 +1,3 @@
-using agent.Class;
 using agent.Jobs;
 using agent.Repository;
 using FluentMigrator.Runner;
@@ -23,7 +22,7 @@ namespace agent
         }
         public IConfiguration Configuration { get; }
 
-        private const string ConnectionString = @"Data Source=metrics.db; Version=3;";
+        private const string connectionString = @"Data Source=metrics.db; Version=3;";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -37,7 +36,7 @@ namespace agent
             services.AddFluentMigratorCore()
                 .ConfigureRunner(rb => rb
                 .AddSQLite()
-                .WithGlobalConnectionString(ConnectionString)
+                .WithGlobalConnectionString(connectionString)
                 .ScanIn(typeof(Startup).Assembly).For.Migrations()
                 ).AddLogging(lb => lb
                 .AddFluentMigratorConsole());

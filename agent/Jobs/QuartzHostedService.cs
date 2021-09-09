@@ -1,5 +1,4 @@
-﻿using agent.Repository;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Quartz;
 using Quartz.Spi;
 using System.Collections.Generic;
@@ -8,24 +7,24 @@ using System.Threading.Tasks;
 public class QuartzHostedService : IHostedService
 
 {
-    private readonly ISchedulerFactory _schedulerFactory;
-    private readonly IJobFactory _jobFactory;
-    private readonly IEnumerable<JobSchedule> _jobSchedules;
+    private readonly ISchedulerFactory schedulerFactory;
+    private readonly IJobFactory jobFactory;
+    private readonly IEnumerable<JobSchedule> jobSchedules;
     public QuartzHostedService(
     ISchedulerFactory schedulerFactory,
     IJobFactory jobFactory,
     IEnumerable<JobSchedule> jobSchedules)
     {
-        _schedulerFactory = schedulerFactory;
-        _jobSchedules = jobSchedules;
-        _jobFactory = jobFactory;
+        this.schedulerFactory = schedulerFactory;
+        this.jobSchedules = jobSchedules;
+        this.jobFactory = jobFactory;
     }
     public IScheduler Scheduler { get; set; }
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        Scheduler = await _schedulerFactory.GetScheduler(cancellationToken);
-        Scheduler.JobFactory = _jobFactory;
-        foreach (var jobSchedule in _jobSchedules)
+        Scheduler = await schedulerFactory.GetScheduler(cancellationToken);
+        Scheduler.JobFactory = jobFactory;
+        foreach (var jobSchedule in jobSchedules)
         {
             var job = CreateJobDetail(jobSchedule);
             var trigger = CreateTrigger(jobSchedule);

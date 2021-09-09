@@ -1,4 +1,4 @@
-﻿namespace agent.Repository
+﻿namespace manager.Repository
 {
     public class DotNetMetricsRepository : MetricsRepository
     {

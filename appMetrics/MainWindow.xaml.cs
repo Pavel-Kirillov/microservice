@@ -1,6 +1,4 @@
-﻿using appMetrics.Class;
-using manager;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,7 +19,9 @@ namespace appMetrics
 
             AddAgentsToList();
             if (listBox.Items.Count != 0)
+            {
                 agentID = Convert.ToInt32(listBox.SelectedItem.ToString());
+            }
 
             listBox.SelectedIndex = 0;
         }
@@ -43,8 +43,8 @@ namespace appMetrics
             if (listBox.Items.Count != 0)
             {
                 agentID = Convert.ToInt32(listBox.SelectedItem.ToString());
-                CurrentAgent.Text = $" Текущий агент {agentID} {agents[listBox.SelectedIndex].AgentAddress}";
-                
+                currentAgent.Text = $" Текущий агент {agentID} {agents[listBox.SelectedIndex].AgentAddress}";
+
             }
         }
         private void UpdateOnСlickRegister(object sender, RoutedEventArgs args)

@@ -1,7 +1,7 @@
-﻿using agent.Repository;
+﻿using manager.Repository;
 using System.Net.Http;
 
-namespace agent.Jobs
+namespace manager.Jobs
 {
     public class DotNetMetricJob : MetricJob
     {
